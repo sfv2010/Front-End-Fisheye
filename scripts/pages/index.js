@@ -1,4 +1,4 @@
-//create each photographer
+//Function to create each photographer
 //async?
 async function displayData(photographers) {
     const photographersSection = document.querySelector(
@@ -13,9 +13,10 @@ async function displayData(photographers) {
         photographersSection.appendChild(userCardDOM);
     });
 }
+//Function to get and display photographer data
 async function init() {
     const { photographers } = await getPhotographers();
-    console.log("photographers=" + photographers);
+    //console.log("photographers=" + photographers);
     displayData(photographers);
 }
 init();
