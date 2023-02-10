@@ -49,6 +49,11 @@ h1 {
 .photographer_section article h2 {
     color: #d3573c;
     font-size: 36px;
+    transition: 0.3s;
+}
+.photographer_section h2:hover {
+    letter-spacing: 0.1em;
+    transition: 0.3s;
 }
 
 .photographer_section article img {
@@ -56,6 +61,12 @@ h1 {
     width: 200px;
     border-radius: 50%;
     object-fit: cover;
+    transition: 0.4s;
+}
+.photographer_section img:hover {
+    box-shadow: 0px 0px 10px #666;
+    opacity: 0.8;
+    transition: 0.4s;
 }
 .photographer_section h3 {
     color: #901c1c;
