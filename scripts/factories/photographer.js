@@ -11,7 +11,7 @@ function photographerFactory(photographer) {
         const articlePhotographer = document.createElement("article");
         // Create link
         const linkPhotographer = document.createElement("a");
-        linkPhotographer.href = `photographer.html?id= ${id} `;
+        linkPhotographer.href = `photographer.html?${id} `;
         linkPhotographer.setAttribute(
             "aria-label",
             `Lien vers le portfolio de ${name}`
@@ -19,7 +19,7 @@ function photographerFactory(photographer) {
         // Create image
         const imgPhotographer = document.createElement("img");
         imgPhotographer.src = picture;
-        imgPhotographer.alt = `Portrait de ${name}`;
+        imgPhotographer.alt = name;
         // Create h2
         const h2Photographer = document.createElement("h2");
         h2Photographer.textContent = name;
@@ -29,8 +29,8 @@ function photographerFactory(photographer) {
         divPhotographer.tabIndex = "0";
 
         // Create h3
-        const Photographer = document.createElement("h3");
-        Photographer.textContent = city + ", " + country;
+        const h3Photographer = document.createElement("h3");
+        h3Photographer.textContent = city + ", " + country;
         // Create p
         const pPhotographer = document.createElement("p");
         pPhotographer.textContent = tagline;
@@ -42,10 +42,10 @@ function photographerFactory(photographer) {
         linkPhotographer.appendChild(imgPhotographer);
         linkPhotographer.appendChild(h2Photographer);
         articlePhotographer.appendChild(divPhotographer);
-        divPhotographer.appendChild(Photographer);
+        divPhotographer.appendChild(h3Photographer);
         divPhotographer.appendChild(pPhotographer);
         divPhotographer.appendChild(spanPhotographer);
         return articlePhotographer;
     }
-    return { name, picture, getUserCardDOM };
+    return { name, picture, id, getUserCardDOM };
 }
