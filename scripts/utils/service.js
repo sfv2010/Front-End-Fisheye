@@ -1,11 +1,12 @@
+//Function to fetch json data
 async function getPhotographers() {
     try {
         const resPhotographers = await fetch("data/photographers.json");
-        console.log(resPhotographers);
+        //console.log(resPhotographers);
         const jsonPhotographers = await resPhotographers.json();
-        console.log(jsonPhotographers);
+        //console.log(jsonPhotographers);
         // const dataPhotographers = jsonPhotographers.photographers;
-        // console.log(dataPhotographers);
+        // console.log(dataPhotographers[0]);
         return jsonPhotographers;
     } catch (error) {
         console.log(error);
