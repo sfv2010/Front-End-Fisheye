@@ -4,12 +4,12 @@ async function getPhotographers() {
         console.log(resPhotographers);
         const jsonPhotographers = await resPhotographers.json();
         console.log(jsonPhotographers);
-        const dataPhotographers = jsonPhotographers.photographers;
-        console.log(dataPhotographers);
-        return { dataPhotographers: { ...photographers } };
+        // const dataPhotographers = jsonPhotographers.photographers;
+        // console.log(dataPhotographers);
+        return jsonPhotographers;
     } catch (error) {
         console.log(error);
-        // document.querySelector(h2).textContent =
-        //     " Erreur d'affichage - nous sommes désolés ";
+        document.querySelector(".photographer_section").textContent =
+            " Erreur d'affichage - nous sommes désolés ";
     }
 }
