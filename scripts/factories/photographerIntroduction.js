@@ -1,12 +1,12 @@
-//Function that creates a photographer introduction
+//Factory Function that creates a photographer introduction
 function photographerIntroduction(photographer) {
     //Object destructuring assignment. Extract multiple properties from object
-    const { city, country, id, name, portrait, price, tagline } = photographer;
-    //const city = photograher.city..
+    const { city, country, name, portrait, tagline } = photographer;
+    //const city = photographer.city..
 
     const picture = `assets/photographers/${portrait}`;
     //Function that returns the photographer DOM element
-    function getPhotgrapherCardDOM() {
+    function getPhotographerCardDOM() {
         // Create article element
         const articlePhotographer = document.createElement("article");
 
@@ -29,9 +29,6 @@ function photographerIntroduction(photographer) {
         // Create p
         const pPhotographer = document.createElement("p");
         pPhotographer.textContent = tagline;
-        // Create span
-        const spanPhotographer = document.createElement("span");
-        spanPhotographer.innerText = `${price} €/jour`;
         //Create button
         const buttonPhotographer = document.createElement("button");
         buttonPhotographer.classList.add("contact_button");
@@ -44,9 +41,8 @@ function photographerIntroduction(photographer) {
         divPhotographer.appendChild(h2Photographer);
         divPhotographer.appendChild(h3Photographer);
         divPhotographer.appendChild(pPhotographer);
-        divPhotographer.appendChild(spanPhotographer);
 
         return articlePhotographer;
     }
-    return { name, picture, id, getPhotgrapherCardDOM };
+    return { getPhotographerCardDOM };
 }
