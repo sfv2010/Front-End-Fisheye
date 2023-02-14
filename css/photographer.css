@@ -108,3 +108,24 @@ form input {
 .introduction {
     padding-left: 20px;
 }
+.likePrice {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #db8876;
+    width: 376px;
+    height: 89px;
+    border-radius: 5px;
+    bottom: 0;
+    right: 3%;
+}
+.likePrice p {
+    font-size: 24px;
+}
+body {
+    position: relative;
+}
+.likePrice i {
+    margin-left: 5px;
+}
