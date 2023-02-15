@@ -8,7 +8,8 @@
     height: 300px;
     margin: 0 100px;
 }
-.contact_button {
+.contact_button,
+.dropDownMenu {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -74,13 +75,6 @@ form input {
     border: none;
     border-radius: 5px;
 }
-/* .photograph-header article {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-} */
 .photograph-header article {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -114,8 +108,8 @@ form input {
     justify-content: space-around;
     align-items: center;
     background-color: #db8876;
-    width: 376px;
-    height: 89px;
+    width: 400px;
+    height: 60px;
     border-radius: 5px;
     bottom: 0;
     right: 3%;
@@ -128,4 +122,96 @@ body {
 }
 .likePrice i {
     margin-left: 5px;
+}
+.media {
+    margin: 0 100px;
+}
+.dropDownMenu {
+    width: 200px;
+    padding-left: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.containerDropDown {
+    position: relative;
+    width: 300px;
+    margin-top: 20px;
+}
+.arrowDropMenu {
+    position: absolute;
+    right: 25px;
+    top: 22px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.arrowDropMenu::after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    pointer-events: none;
+    transform: translateY(-50%) rotate(-135deg);
+}
+.dropDownMenuArrow {
+    width: 200px;
+    padding-left: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    background-image: url(/assets/icons/chevron-down-solid.svg);
+    background-size: 15px;
+    background-position: calc(100% - 20px) 50%, calc(100% - 10px) 50%;
+    background-repeat: no-repeat;
+}
+label {
+    font-size: 19px;
+    margin-right: 15px;
+}
+.showMenu {
+    height: 200px;
+    cursor: pointer;
+}
+option {
+    appearance: none;
+    padding: 20px;
+}
+option:nth-child(-n + 2) {
+    border-bottom: 2px #fff solid;
+}
+
+.containerMediaWork {
+    margin-top: 40px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.divMedia img,
+video {
+    border-radius: 5px;
+    width: 100%;
+    height: 300px;
+    cursor: pointer;
+    object-position: 0 35%;
+    object-fit: cover;
+}
+.titleLike {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.titleLike h3 {
+    font-size: 25px;
+}
+.titleLike span,
+i {
+    margin-left: 5px;
+    font-size: 20px;
+    color: #901c1c;
 }
