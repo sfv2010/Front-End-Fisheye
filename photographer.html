@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FishEye- Présentation d'un photographe indépendant et ses meilleurs travaux ">
     <title>Fisheye - photographe </title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/ee83a0c4c7.css" crossorigin="anonymous"> -->
@@ -16,15 +16,15 @@
   <body>
     <header>
       <a href="index.html ">
-        <img src="assets/images/logo.png" class="logo" alt="Fisheye Homme page" /></a>
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Homme page"></a>
     </header>
     <main id="main">
-      <div class="photograph-header" aria-label="information photographer">
+      <div class="photograph-header">
         <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
       </div>
-      <article class="media">
+      <div class="media">
         <div class="containerDropDown">
-          <label for="dropDownMenu">Trier par</label>
+          <label for="dropDownMenu" tabindex="0">Trier par</label>
           <select name="dropDownMenu" id="dropDownMenu" class="dropDownMenu dropDownMenuArrow" tabindex="0">
             <option value="Popularité">Popularité</option>
             <option value="Date">Date</option>
@@ -33,18 +33,31 @@
           <span class="arrowSpan"></span>
         </div>
         <div class="containerMediaWork"></div>
-      </article>
+      </div>
     </main>
     <div id="contact_modal">
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" alt="close Modal" onclick="closeModal()">
         </header>
-        <form>
-          <div>
-            <label>Prénom</label>
-            <input />
+        <form name="contact" action="photographer.html" method="get" aria-label="contact form">
+          <div class="formData">
+            <label for="lastName">Prénom</label>
+            <input class="text-control" type="text" id="lastName" name="lastName" minlength="2" required>
+          </div>
+          <div class="formData">
+            <label for="firstName">Nom</label>
+            <input class="text-control" type="text" id="firstName" name="firstName" minlength="2" required>
+          </div>
+          <div class="formData">
+            <label for="email">Email</label>
+            <input class="text-control" type="email" id="email" name="email" required>
+          </div>
+          <div class="formData">
+            <label for="message">Votre message</label>
+            <textarea class="text-control message" id="message" name="message" maxlength="300" minlength="5" required>
+            </textarea>
           </div>
           <button class="contact_button">Envoyer</button>
         </form>
