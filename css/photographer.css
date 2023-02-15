@@ -1,6 +1,14 @@
 @import url("style.css");
 #contact_modal {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(196, 196, 196, 0.4);
 }
 
 .photograph-header {
@@ -25,13 +33,14 @@
 .modal {
     border-radius: 5px;
     background-color: #db8876;
-    width: 50%;
+    width: 70%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
+    margin: 5% auto;
 }
 
 .modal header {
@@ -47,6 +56,7 @@
     font-size: 64px;
     font-weight: normal;
     text-align: center;
+    color: #000;
 }
 
 form {
@@ -69,11 +79,17 @@ form div {
     margin-bottom: 26px;
 }
 
-form input {
+form input,
+textarea {
     width: 100%;
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 30px;
+    padding: 10px;
+}
+form textarea {
+    height: 170px;
 }
 .photograph-header article {
     display: grid;
@@ -200,6 +216,12 @@ video {
     cursor: pointer;
     object-position: 0 35%;
     object-fit: cover;
+    transition: 0.4s;
+}
+.divMedia img:hover,
+video:hover {
+    box-shadow: 0px 0px 10px #666;
+    opacity: 0.8;
 }
 .titleLike {
     display: flex;
@@ -214,4 +236,13 @@ i {
     margin-left: 5px;
     font-size: 20px;
     color: #901c1c;
+    cursor: pointer;
+}
+.contact_photographer {
+    transition: 0.4s;
+}
+.contact_photographer:hover {
+    background-color: #db8876;
+    color: #000;
+    transform: translateY(4px); /*下に動く*/
 }
