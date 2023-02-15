@@ -29,8 +29,9 @@ function photographerIntroduction(photographer) {
         pPhotographer.textContent = tagline;
         //Create button
         const buttonPhotographer = document.createElement("button");
+        buttonPhotographer.classList.add("contact_photographer");
         buttonPhotographer.classList.add("contact_button");
-        // buttonPhotographer.onclick = "displayModal()";
+        // buttonPhotographer.onclick = displayModal();
         buttonPhotographer.textContent = "Contactez-moi";
 
         //create div pour small display
