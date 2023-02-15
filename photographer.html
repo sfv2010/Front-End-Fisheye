@@ -9,6 +9,8 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/ee83a0c4c7.css" crossorigin="anonymous"> -->
+    <script src="https://kit.fontawesome.com/ee83a0c4c7.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -20,7 +22,18 @@
       <div class="photograph-header" aria-label="information photographer">
         <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
       </div>
-
+      <article class="media">
+        <div class="containerDropDown">
+          <label for="dropDownMenu">Trier par</label>
+          <select name="dropDownMenu" id="dropDownMenu" class="dropDownMenu dropDownMenuArrow" tabindex="0">
+            <option value="Popularité">Popularité</option>
+            <option value="Date">Date</option>
+            <option value="Titre">Titre</option>
+          </select>
+          <span class="arrowSpan"></span>
+        </div>
+        <div class="containerMediaWork"></div>
+      </article>
     </main>
     <div id="contact_modal">
       <div class="modal">
@@ -39,6 +52,7 @@
     </div>
     <script src="scripts/utils/service.js"></script>
     <script src="scripts/factories/photographerIntroduction.js"></script>
+    <script src="scripts/factories/mediaFactory.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
