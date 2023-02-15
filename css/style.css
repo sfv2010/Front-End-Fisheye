@@ -25,6 +25,9 @@ h1 {
     color: #901c1c;
     margin-right: 100px;
 }
+h2 {
+    color: #d3573c;
+}
 
 .logo {
     height: 50px;
@@ -47,7 +50,6 @@ h1 {
 }
 
 .photographer_section article h2 {
-    color: #d3573c;
     font-size: 36px;
     transition: 0.3s;
 }
@@ -56,7 +58,7 @@ h1 {
     transition: 0.3s;
 }
 
-.photographer_section article img {
+article img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -68,13 +70,13 @@ h1 {
     opacity: 0.8;
     transition: 0.4s;
 }
-.photographer_section h3 {
+article h3 {
     color: #901c1c;
 }
-.photographer_section p {
+article p {
     font-size: 0.9em;
 }
-.photographer_section span {
+article span {
     color: #757575;
     font-size: 0.8em;
 }
