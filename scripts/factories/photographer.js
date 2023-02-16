@@ -1,8 +1,8 @@
-//Function that creates a photographer card
-function photographerFactory(photographer) {
+//Factory Function that creates a photographer card
+export function photographerFactory(photographer) {
     //Object destructuring assignment. Extract multiple properties from object
     const { city, country, id, name, portrait, price, tagline } = photographer;
-    //const city = photograher.city..
+    //const city = photographer.city..
 
     const picture = `assets/photographers/${portrait}`;
     //Function that returns the photographer DOM element
@@ -36,7 +36,7 @@ function photographerFactory(photographer) {
         pPhotographer.textContent = tagline;
         // Create span
         const spanPhotographer = document.createElement("span");
-        spanPhotographer.innerText = `${price} €/jour`;
+        spanPhotographer.textContent = `${price} €/jour`;
 
         articlePhotographer.appendChild(linkPhotographer);
         linkPhotographer.appendChild(imgPhotographer);
@@ -45,7 +45,8 @@ function photographerFactory(photographer) {
         divPhotographer.appendChild(h3Photographer);
         divPhotographer.appendChild(pPhotographer);
         divPhotographer.appendChild(spanPhotographer);
+
         return articlePhotographer;
     }
-    return { name, picture, id, getUserCardDOM };
+    return { getUserCardDOM };
 }

@@ -1,5 +1,5 @@
 //Factory Function that creates a photographer introduction
-function photographerIntroduction(photographer) {
+export function photographerIntroduction(photographer) {
     //Object destructuring assignment. Extract multiple properties from object
     const { city, country, name, portrait, tagline, price } = photographer;
 

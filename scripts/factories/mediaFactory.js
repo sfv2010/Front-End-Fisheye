@@ -1,5 +1,5 @@
 //Factory Function that creates a photographer introduction
-function mediaFactory(data) {
+export function mediaFactory(data) {
     //Object destructuring assignment. Extract multiple properties from object
     const { id, photographerId, title, image, video, likes, date, price } =
         data;
