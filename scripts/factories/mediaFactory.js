@@ -4,23 +4,19 @@ function mediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } =
         data;
 
-    const picture = `assets/images/${photographerId}/${image}`;
-    const videos = `assets/images/${photographerId}/${video} `;
+    let mediaUrl;
+    if (video) {
+        mediaUrl = `assets/images/${photographerId}/${video} `;
+    } else {
+        mediaUrl = `assets/images/${photographerId}/${image}`;
+    }
+
     //Function that returns the photographer DOM element
     function getMediaCardDOM() {
         // Create div
         const divMedia = document.createElement("div");
         divMedia.classList.add("divMedia");
         divMedia.tabIndex = "0";
-
-        // Create image
-        const imgMedia = document.createElement("img");
-        imgMedia.src = picture;
-        imgMedia.alt = title;
-        // Create video
-        const videoMedia = document.createElement("video");
-        videoMedia.src = videos;
-        videoMedia.alt = title;
 
         // Create div
         const divTitleLike = document.createElement("div");
@@ -43,8 +39,22 @@ function mediaFactory(data) {
         iconLike.classList.add("fa-solid");
         iconLike.classList.add("fa-heart");
 
-        divMedia.appendChild(imgMedia);
-        // divMedia.appendChild(videoMedia);
+        if (video) {
+            // Create video
+            const videoMedia = document.createElement("video");
+            videoMedia.src = mediaUrl;
+            videoMedia.alt = title;
+            videoMedia.controls = "cotrols";
+            videoMedia.textContent = "Sorry, can't play video";
+            divMedia.appendChild(videoMedia);
+        } else {
+            // Create image
+            const imgMedia = document.createElement("img");
+            imgMedia.src = mediaUrl;
+            imgMedia.alt = title;
+            divMedia.appendChild(imgMedia);
+        }
+
         divMedia.appendChild(divTitleLike);
         divTitleLike.appendChild(h3Media);
         divTitleLike.appendChild(divLike);
