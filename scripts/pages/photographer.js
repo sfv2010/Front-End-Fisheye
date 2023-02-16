@@ -1,3 +1,9 @@
+import { getPhotographers } from "../utils/service.js";
+import { photographerIntroduction } from "../factories/photographerIntroduction.js";
+import { mediaFactory } from "../factories/mediaFactory.js";
+
+import {} from "../utils/contactForm.js";
+
 //Function to create each photographer
 async function displayData(photographers) {
     const mediaSection = document.querySelector(".photograph-header");

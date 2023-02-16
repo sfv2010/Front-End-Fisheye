@@ -1,3 +1,5 @@
+import { getPhotographers } from "../utils/service.js";
+import { photographerFactory } from "../factories/photographer.js";
 //Function to create each photographer
 //async?
 async function displayData(photographers) {
@@ -7,7 +9,6 @@ async function displayData(photographers) {
     //Loop through the Photographers array and create a profile for each
     photographers.forEach((photographer) => {
         const photographerInfo = photographerFactory(photographer);
-        console.log(photographerInfo);
         //create each photographer in a Dom element
         const userCardDOM = photographerInfo.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
