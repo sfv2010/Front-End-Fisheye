@@ -67,19 +67,19 @@ function mediaFactory(data) {
     return { getMediaCardDOM };
 }
 
-//Event for select
-const dropMenu = document.getElementById("dropDownMenu");
-const spanArrow = document.querySelector(".arrowSpan");
-dropMenu.addEventListener("click", () => {
-    dropMenu.size = "3";
-    dropMenu.classList.add("showMenu");
-    spanArrow.classList.add("arrowDropMenu");
-    dropMenu.classList.remove("dropDownMenuArrow");
-});
+// //Event for select
+// const dropMenu = document.getElementById("dropDownMenu");
+// const spanArrow = document.querySelector(".arrowSpan");
+// dropMenu.addEventListener("click", () => {
+//     dropMenu.size = "3";
+//     dropMenu.classList.add("showMenu");
+//     spanArrow.classList.add("arrowDropMenu");
+//     dropMenu.classList.remove("dropDownMenuArrow");
+// });
 
-spanArrow.addEventListener("click", () => {
-    dropMenu.size = "0";
-    dropMenu.classList.remove("showMenu");
-    spanArrow.classList.remove("arrowDropMenu");
-    dropMenu.classList.add("dropDownMenuArrow");
-});
+// spanArrow.addEventListener("click", () => {
+//     dropMenu.size = "0";
+//     dropMenu.classList.remove("showMenu");
+//     spanArrow.classList.remove("arrowDropMenu");
+//     dropMenu.classList.add("dropDownMenuArrow");
+// });
