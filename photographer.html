@@ -37,9 +37,9 @@
     <div id="contact_modal" role="dialog" aria-hidden="true" aria-describedby="formContact">
       <div class="modal">
         <header>
-          <h2 id="formContact" tabindex="1">Contactez-moi</h2>
+          <h2 id="formContact" tabindex="0">Contactez-moi</h2>
           <img role="button" class="closeModal" tabindex="0" src=" assets/icons/close.svg" alt="close Modal"
-            onclick="closeModal()" aria-label="closeModal">
+            aria-label="closeModal">
         </header>
         <form name="contact" action="photographer.html" method="get">
           <div class="formData">
@@ -66,11 +66,7 @@
         </form>
       </div>
     </div>
-    <script src="scripts/utils/service.js"></script>
-    <script src="scripts/factories/photographerIntroduction.js"></script>
-    <script src="scripts/factories/mediaFactory.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
-    <script src="scripts/utils/contactForm.js"></script>
+    <script type="module" src="scripts/pages/photographer.js"></script>
   </body>
 
 </html>
