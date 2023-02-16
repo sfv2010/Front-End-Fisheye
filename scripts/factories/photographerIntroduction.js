@@ -46,6 +46,11 @@ function photographerIntroduction(photographer) {
         const pPrice = document.createElement("p");
         pPrice.textContent = `${price} €/jour`;
 
+        //modal
+        document.getElementById(
+            "formContact"
+        ).innerHTML = `Contactez-moi <br> ${name}`;
+
         articlePhotographer.appendChild(divPhotographer);
         articlePhotographer.appendChild(buttonPhotographer);
         articlePhotographer.appendChild(imgPhotographer);
