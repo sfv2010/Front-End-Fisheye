@@ -18,7 +18,7 @@
       <a href="index.html ">
         <img src="assets/images/logo.png" class="logo" alt="Fisheye Homme page"></a>
     </header>
-    <main id="main">
+    <main id="main" aria-hidden="false">
       <div class="photograph-header">
         <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
       </div>
@@ -35,28 +35,32 @@
         <div class="containerMediaWork"></div>
       </div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" role="dialog" aria-hidden="true" aria-describedby="formContact">
       <div class="modal">
         <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" alt="close Modal" onclick="closeModal()">
+          <h2 id="formContact" tabindex="1">Contactez-moi</h2>
+          <img class="closeModal" tabindex="0" src=" assets/icons/close.svg" alt="close Modal" onclick="closeModal()"
+            aria-label="closeModal">
         </header>
-        <form name="contact" action="photographer.html" method="get" aria-label="contact form">
+        <form name="contact" action="photographer.html" method="get">
           <div class="formData">
             <label for="lastName">Prénom</label>
-            <input class="text-control" type="text" id="lastName" name="lastName" minlength="2" required>
+            <input class="text-control" type="text" id="lastName" name="lastName" minlength="2" required
+              aria-required="true" autofocus>
           </div>
           <div class="formData">
             <label for="firstName">Nom</label>
-            <input class="text-control" type="text" id="firstName" name="firstName" minlength="2" required>
+            <input class="text-control" type="text" id="firstName" name="firstName" minlength="2" required
+              aria-required="true">
           </div>
           <div class="formData">
             <label for="email">Email</label>
-            <input class="text-control" type="email" id="email" name="email" required>
+            <input class="text-control" type="email" id="email" name="email" required aria-required="true">
           </div>
           <div class="formData">
             <label for="message">Votre message</label>
-            <textarea class="text-control message" id="message" name="message" maxlength="300" minlength="5" required>
+            <textarea class="text-control message" id="message" name="message" maxlength="300" minlength="5" required
+              aria-required="true">
             </textarea>
           </div>
           <button class="contact_button">Envoyer</button>
@@ -66,8 +70,8 @@
     <script src="scripts/utils/service.js"></script>
     <script src="scripts/factories/photographerIntroduction.js"></script>
     <script src="scripts/factories/mediaFactory.js"></script>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
   </body>
 
 </html>
