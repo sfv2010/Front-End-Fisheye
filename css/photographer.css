@@ -148,7 +148,7 @@ body {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url(assets/icons/chevron.svg);
+    background-image: url(../assets/icons/chevron.svg);
     background-size: 15px;
     background-position: calc(100% - 20px) 50%;
     background-repeat: no-repeat;
