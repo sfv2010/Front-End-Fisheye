@@ -15,12 +15,12 @@
 
   <body>
     <header>
-      <a href="index.html ">
+      <a href="index.html " tabindex="1">
         <img src="assets/images/logo.png" class="logo" alt="Fisheye Homme page"></a>
     </header>
     <main id="main" aria-hidden="false">
       <div class="photograph-header">
-        <!-- <button class="contact_button contact_photographer">Contactez-moi</button> -->
+        <button class="contact_button contact_photographer">Contactez-moi</button>
       </div>
       <div class="media">
         <div class="containerDropDown">
@@ -38,8 +38,9 @@
       <div class="modal">
         <header>
           <h2 id="formContact" tabindex="0">Contactez-moi</h2>
-          <img role="button" class="closeModal" tabindex="0" src=" assets/icons/close.svg" alt="close Modal"
-            aria-label="closeModal">
+          <button class="closeModal" tabindex="0" aria-label="“Close Contact form” ">
+            <img src=" assets/icons/close.svg" alt="close Modal" aria-label="closeModal">
+          </button>
         </header>
         <form name="contact" action="photographer.html" method="get">
           <div class="formData">
