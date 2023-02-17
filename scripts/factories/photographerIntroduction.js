@@ -17,7 +17,7 @@ export function photographerIntroduction(photographer) {
         // Create div
         const divPhotographer = document.createElement("div");
         divPhotographer.classList.add("introduction");
-        divPhotographer.tabIndex = "0";
+        divPhotographer.tabIndex = "2";
         // Create h2
         const h2Photographer = document.createElement("h2");
         h2Photographer.textContent = name;
@@ -27,13 +27,6 @@ export function photographerIntroduction(photographer) {
         // Create p
         const pPhotographer = document.createElement("p");
         pPhotographer.textContent = tagline;
-        //Create button
-        const buttonPhotographer = document.createElement("button");
-        buttonPhotographer.classList.add("contact_photographer");
-        buttonPhotographer.classList.add("contact_button");
-        // buttonPhotographer.onclick = displayModal();
-        buttonPhotographer.textContent = "Contactez-moi";
-
         //create div pour small display
         const divSmallDisplay = document.createElement("div");
         divSmallDisplay.classList.add("likePrice");
@@ -52,7 +45,7 @@ export function photographerIntroduction(photographer) {
         ).innerHTML = `Contactez-moi <br> ${name}`;
 
         articlePhotographer.appendChild(divPhotographer);
-        articlePhotographer.appendChild(buttonPhotographer);
+        // articlePhotographer.appendChild(buttonPhotographer);
         articlePhotographer.appendChild(imgPhotographer);
         articlePhotographer.appendChild(divSmallDisplay);
 
