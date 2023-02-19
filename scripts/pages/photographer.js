@@ -1,17 +1,18 @@
 import { getPhotographers } from "../utils/service.js";
 import { photographerIntroduction } from "../factories/photographerIntroduction.js";
 import { mediaFactory } from "../factories/mediaFactory.js";
-
 import {} from "../utils/contactForm.js";
+import {} from "../utils/likes.js";
 
-//Function to create each photographer
-async function displayData(photographers) {
+// ---------------------------photographer--------------------------
+//Function to create selected photographer
+function displayData(photographer) {
     const mediaSection = document.querySelector(".photograph-header");
-    //Loop through the Photographers array and create a profile for each
-    photographers.forEach((photographer) => {
-        const photographerInfo = photographerIntroduction(photographer);
-        console.log(photographerInfo);
-        //create each photographer in a Dom element
+    //Loop through the Photographer array and create a profile
+    console.log(photographer);
+    photographer.forEach((info) => {
+        const photographerInfo = photographerIntroduction(info);
+        //Create photographer information in the Dom element
         const userCardDOM = photographerInfo.getPhotographerCardDOM();
         mediaSection.appendChild(userCardDOM);
     });
@@ -20,10 +21,8 @@ async function displayData(photographers) {
 async function init() {
     //media or photographers
     const { photographers } = await getPhotographers();
-    console.log("photographers=" + photographers[0]);
     //split("?")[1] = id, split("?")[0]= http...
     const idPhotographer = location.href.split("?")[1];
-    console.log(idPhotographer);
     //typeof idPhotographer = Sting
     const SelectedPhoto = await photographers.filter(
         (photographer) => photographer.id == idPhotographer
@@ -35,13 +34,13 @@ async function init() {
 }
 init();
 
-//Function to create each photo
+// ---------------------------media--------------------------
+//Function to create photos of selected photographer
 async function displayMedia(medias) {
     const mediaSection = document.querySelector(".containerMediaWork");
     //Loop through the Photographers array and create a profile for each
     medias.forEach((media) => {
         const mediaInfo = mediaFactory(media);
-        console.log(mediaInfo);
         //create each photographer in a Dom element
         const userCardDOM = mediaInfo.getMediaCardDOM();
         mediaSection.appendChild(userCardDOM);
@@ -54,14 +53,10 @@ async function initMedia() {
     console.log("media=" + media[0]);
     //split("?")[1] = id, split("?")[0]= http...
     const idPhotographer = location.href.split("?")[1];
-    console.log(idPhotographer);
     //typeof idPhotographer = Sting
     const SelectedPhoto = await media.filter(
         (media) => media.photographerId == idPhotographer
     );
-
-    //pourquoi sur console on ne peut pas
-    console.log("photographer=" + SelectedPhoto);
     displayMedia(SelectedPhoto);
 }
 initMedia();
