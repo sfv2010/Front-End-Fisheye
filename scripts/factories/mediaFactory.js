@@ -33,11 +33,15 @@ export function mediaFactory(data) {
         divLike.tabIndex = "0";
         // Create span
         const spanMedia = document.createElement("span");
+        spanMedia.classList.add("numberOfLike");
         spanMedia.textContent = likes;
+        spanMedia.ariaLabel = "number of likes";
+
         //Create icon
         const iconLike = document.createElement("i");
         iconLike.classList.add("fa-solid");
         iconLike.classList.add("fa-heart");
+        iconLike.ariaLabel = "heart icon";
 
         if (video) {
             // Create video
@@ -62,9 +66,12 @@ export function mediaFactory(data) {
         divLike.appendChild(spanMedia);
         divLike.appendChild(iconLike);
 
+        //small footer
+        document.querySelector(".totalLikes").textContent = likes;
+
         return divMedia;
     }
-    return { getMediaCardDOM };
+    return { getMediaCardDOM, likes, id, date, price };
 }
 
 // //Event for select
