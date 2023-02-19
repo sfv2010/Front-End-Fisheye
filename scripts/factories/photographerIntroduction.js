@@ -27,17 +27,8 @@ export function photographerIntroduction(photographer) {
         // Create p
         const pPhotographer = document.createElement("p");
         pPhotographer.textContent = tagline;
-        //create div pour small display
-        const divSmallDisplay = document.createElement("div");
-        divSmallDisplay.classList.add("likePrice");
-        divSmallDisplay.tabIndex = "0";
-        const pLike = document.createElement("p");
-        pLike.textContent = "nombre de like";
-        const iconLike = document.createElement("i");
-        iconLike.classList.add("fa-solid");
-        iconLike.classList.add("fa-heart");
-        const pPrice = document.createElement("p");
-        pPrice.textContent = `${price} €/jour`;
+        //small display
+        document.querySelector(".dailyPrice").textContent = `${price} €/jour`;
 
         //modal
         document.getElementById(
@@ -45,17 +36,10 @@ export function photographerIntroduction(photographer) {
         ).innerHTML = `Contactez-moi <br> ${name}`;
 
         articlePhotographer.appendChild(divPhotographer);
-        // articlePhotographer.appendChild(buttonPhotographer);
         articlePhotographer.appendChild(imgPhotographer);
-        articlePhotographer.appendChild(divSmallDisplay);
-
         divPhotographer.appendChild(h2Photographer);
         divPhotographer.appendChild(h3Photographer);
         divPhotographer.appendChild(pPhotographer);
-
-        divSmallDisplay.appendChild(pLike);
-        divSmallDisplay.appendChild(pPrice);
-        pLike.appendChild(iconLike);
 
         return articlePhotographer;
     }
