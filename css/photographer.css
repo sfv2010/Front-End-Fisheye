@@ -1,4 +1,7 @@
 @import url("style.css");
+body {
+    position: relative;
+}
 #contact_modal {
     display: none;
     position: fixed;
@@ -106,7 +109,6 @@ form textarea {
 }
 .photograph-header h2 {
     font-size: 64px;
-    line-height: 83px;
 }
 .photograph-header h3 {
     margin: 10px 0;
@@ -139,27 +141,6 @@ form textarea {
 .introduction {
     padding-left: 20px;
 }
-.likePrice {
-    position: fixed;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #db8876;
-    width: 400px;
-    height: 60px;
-    border-radius: 5px;
-    bottom: 0;
-    right: 3%;
-}
-.likePrice p {
-    font-size: 24px;
-}
-body {
-    position: relative;
-}
-.likePrice i {
-    margin-left: 5px;
-}
 .media {
     margin: 0 100px;
 }
@@ -173,6 +154,9 @@ body {
     background-size: 15px;
     background-position: calc(100% - 20px) 50%;
     background-repeat: no-repeat;
+}
+#dropDownMenu:hover {
+    box-shadow: 0px 0px 10px #901c1c;
 }
 .containerDropDown {
     margin-top: 20px;
@@ -239,7 +223,8 @@ video:hover {
     justify-content: space-between;
     align-items: center;
 }
-.titleLike h3 {
+.titleLike,
+.likePrice h3 {
     font-size: 25px;
 }
 .titleLike span,
@@ -248,4 +233,104 @@ i {
     font-size: 20px;
     color: #901c1c;
     cursor: pointer;
+}
+
+.likeHeart i {
+    margin-left: 5px;
+    color: #000;
+    font-size: 25px;
+}
+.likePrice {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #db8876;
+    width: 400px;
+    height: 60px;
+    border-radius: 5px;
+    bottom: 0;
+    right: 3%;
+}
+.likeHeart {
+    display: flex;
+    align-items: center;
+}
+.dailyPrice {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1150px) {
+    .containerMediaWork {
+        margin-top: 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .photograph-header article {
+        grid-template-columns: 1fr 1fr;
+    }
+    .photograph-header img {
+        height: 180px;
+        width: 180px;
+        margin-right: 20px;
+    }
+    .photograph-header h2 {
+        font-size: 40px;
+    }
+    .photograph-header h3 {
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    .photograph-header p {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .containerMediaWork {
+        grid-template-columns: 1fr;
+    }
+    .divMedia img,
+    video {
+        height: 300px;
+    }
+    .photograph-header article {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: flex-start;
+    }
+    .photograph-header img {
+        height: 150px;
+        width: 150px;
+        margin-right: 20px;
+    }
+    .photograph-header {
+        background-color: #fafafa;
+        height: 250px;
+        margin: 0 20px;
+    }
+    .photograph-header h2 {
+        font-size: 30px;
+    }
+    .photograph-header h3 {
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    .contact_photographer {
+        top: 280px;
+    }
+    .contact_button,
+    #dropDownMenu {
+        font-size: 16px;
+        width: 150px;
+        height: 50px;
+    }
+    .media {
+        margin: 0 10%;
+    }
+    .likePrice {
+        width: 300px;
+        height: 50px;
+        border-radius: 5px;
+        right: 2%;
+    }
 }

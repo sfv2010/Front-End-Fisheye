@@ -80,3 +80,32 @@ article span {
     color: #757575;
     font-size: 0.8em;
 }
+
+@media screen and (max-width: 1000px) {
+    .photographer_section {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 30px;
+    }
+    .logo {
+        height: 40px;
+        margin-left: 30px;
+    }
+    h1 {
+        margin-right: 30px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .photographer_section {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+    header {
+        flex-direction: column;
+    }
+    .logo {
+        margin-left: 0px;
+    }
+    h1 {
+        margin-right: 0px;
+    }
+}
