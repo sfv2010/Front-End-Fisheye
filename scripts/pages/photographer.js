@@ -2,7 +2,7 @@ import { getPhotographers } from "../utils/service.js";
 import { photographerIntroduction } from "../factories/photographerIntroduction.js";
 import { mediaFactory } from "../factories/mediaFactory.js";
 import {} from "../utils/contactForm.js";
-import {} from "../utils/likes.js";
+import { timesLiked } from "../utils/likes.js";
 
 // ---------------------------photographer--------------------------
 //Function to create selected photographer
@@ -45,6 +45,7 @@ async function displayMedia(medias) {
         const userCardDOM = mediaInfo.getMediaCardDOM();
         mediaSection.appendChild(userCardDOM);
     });
+    timesLiked();
 }
 //Function to get,selection and display photo data
 async function initMedia() {
