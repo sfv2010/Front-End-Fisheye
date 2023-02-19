@@ -1,7 +1,6 @@
-window.onload = function () {
+export function timesLiked() {
     const likeIt = document.querySelectorAll(".divLike");
     const totalLikes = document.querySelector(".totalLikes");
-
     const numberOfLike = document.querySelectorAll(".numberOfLike");
     console.log(numberOfLike);
 
@@ -23,15 +22,15 @@ window.onload = function () {
                 clickTimes++;
                 totalLikes.textContent--;
                 timesOfLike.classList.remove("clicked");
-                numberOfLike.textContent--;
+                timesOfLike.textContent--;
             } else {
                 totalLikes.textContent++;
                 timesOfLike.classList.add("clicked");
-                numberOfLike.textContent++;
+                timesOfLike.textContent++;
             }
             console.log(clickTimes);
             // clickTimes ? clickTimes-- : clickTimes++;
             console.log(totalLikes.textContent);
         });
     });
-};
+}
