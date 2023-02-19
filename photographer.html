@@ -42,7 +42,7 @@
             <img src=" assets/icons/close.svg" alt="close Modal" aria-label="closeModal">
           </button>
         </header>
-        <form name="contact" action="photographer.html" method="get">
+        <form name="contact" action="index.html" method="get">
           <div class="formData">
             <label for="lastName">Prénom</label>
             <input class="text-control" type="text" id="lastName" name="lastName" minlength="2" required
@@ -67,6 +67,13 @@
         </form>
       </div>
     </div>
+    <footer class="likePrice" tabindex="0" aria-label="total number of likes and daily price">
+      <div class="likeHeart">
+        <h3 class="totalLikes" aria-label="number of likes"></h3>
+        <i class="fa-solid fa-heart" aria-label="heart icon"></i>
+      </div>
+      <span class="dailyPrice" aria-label="daily price"></span>
+    </footer>
     <script type="module" src="scripts/pages/photographer.js"></script>
   </body>
 
