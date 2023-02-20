@@ -25,7 +25,7 @@
       <div class="media">
         <div class="containerDropDown">
           <label for="dropDownMenu" tabindex="0">Trier par</label>
-          <select name="dropDownMenu" id="dropDownMenu" tabindex="0">
+          <select name="dropDownMenu" id="dropDownMenu" tabindex="0" aria-haspopup="true" aria-expanded="false">
             <option value="Popularité">Popularité</option>
             <option value="Date">Date</option>
             <option value="Titre">Titre</option>
@@ -42,15 +42,15 @@
             <img src=" assets/icons/close.svg" alt="close Modal" aria-label="closeModal">
           </button>
         </header>
-        <form name="contact" action="index.html" method="get">
+        <form name="contact" action="index.html" method="get" novalidate>
           <div class="formData">
-            <label for="lastName">Prénom</label>
-            <input class="text-control" type="text" id="lastName" name="lastName" minlength="2" required
+            <label for="firstName">Prénom</label>
+            <input class="text-control" type="text" id="firstName" name="firstName" minlength="2" required
               aria-required="true" autofocus>
           </div>
           <div class="formData">
-            <label for="firstName">Nom</label>
-            <input class="text-control" type="text" id="firstName" name="firstName" minlength="2" required
+            <label for="lastName">Nom</label>
+            <input class="text-control" type="text" id="lastName" name="lastName" minlength="2" required
               aria-required="true">
           </div>
           <div class="formData">
@@ -67,6 +67,16 @@
         </form>
       </div>
     </div>
+    <nav id="lightboxModal" role="dialog" aria-hidden="true">
+      <div class="lightBox">
+        <button></button>
+        <figure>
+          <img src="" alt="">
+          <figcaption></figcaption>
+        </figure>
+        <button></button>
+      </div>
+    </nav>
     <footer class="likePrice" tabindex="0" aria-label="total number of likes and daily price">
       <div class="likeHeart">
         <h3 class="totalLikes" aria-label="number of likes"></h3>
