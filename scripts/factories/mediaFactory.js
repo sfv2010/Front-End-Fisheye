@@ -50,12 +50,14 @@ export function mediaFactory(data) {
             videoMedia.alt = title;
             videoMedia.controls = "cotrols";
             videoMedia.textContent = "Sorry, can't play video";
+            videoMedia.classList.add("viewInLightbox");
             divMedia.appendChild(videoMedia);
         } else {
             // Create image
             const imgMedia = document.createElement("img");
             imgMedia.src = mediaUrl;
             imgMedia.alt = title;
+            imgMedia.classList.add("viewInLightbox");
             divMedia.appendChild(imgMedia);
         }
 
