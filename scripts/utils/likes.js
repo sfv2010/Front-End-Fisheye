@@ -16,10 +16,8 @@ export function timesLiked() {
         window.addEventListener("load", () => {});
 
         liked.addEventListener("click", () => {
-            let clickTimes = 0;
             const timesOfLike = liked.firstElementChild;
             if (timesOfLike.classList.contains("clicked")) {
-                clickTimes++;
                 totalLikes.textContent--;
                 timesOfLike.classList.remove("clicked");
                 timesOfLike.textContent--;
@@ -28,9 +26,6 @@ export function timesLiked() {
                 timesOfLike.classList.add("clicked");
                 timesOfLike.textContent++;
             }
-            console.log(clickTimes);
-            // clickTimes ? clickTimes-- : clickTimes++;
-            console.log(totalLikes.textContent);
         });
     });
 }
