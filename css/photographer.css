@@ -2,7 +2,8 @@
 body {
     position: relative;
 }
-#contact_modal {
+#contact_modal,
+#lightboxModal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -98,6 +99,30 @@ textarea {
 form textarea {
     height: 170px;
 }
+.error {
+    width: 100%;
+    margin: 4px;
+    padding: 10px 15px;
+    display: inline-block;
+    font-size: 1.3em;
+    color: #fff;
+    background-color: red;
+    border-radius: 30px;
+}
+.inputError {
+    border: 3px solid red;
+}
+
+/* form input:focus:invalid {
+    border: tomato 2px solid;
+}
+form input:focus:valid + .error .invalid {
+    display: none;
+}
+fom input:valid:not(:last-child) {
+    border: seagreen 2px solid;
+} */
+
 .photograph-header article {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -218,6 +243,7 @@ video:hover {
     box-shadow: 0px 0px 10px #666;
     opacity: 0.8;
 }
+
 .titleLike {
     display: flex;
     justify-content: space-between;
@@ -234,12 +260,55 @@ i {
     color: #901c1c;
     cursor: pointer;
 }
+.divLike {
+    display: flex;
+    align-items: center;
+}
+
+#lightboxModal {
+    background-color: #fff;
+    width: 100%;
+}
+.lightbox {
+    position: relative;
+    width: 60%;
+    height: 80vh;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.viewInLightbox {
+    width: 90%;
+    margin: 40px auto;
+}
+.closeLightbox {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+    background: none;
+    border: none;
+    color: #901c1c;
+    cursor: pointer;
+}
+.chevron {
+    font-size: 50px;
+    color: #901c1c;
+    cursor: pointer;
+    width: 100px;
+    height: 200px;
+}
 
 .likeHeart i {
     margin-left: 5px;
     color: #000;
     font-size: 25px;
 }
+
 .likePrice {
     position: fixed;
     display: flex;
