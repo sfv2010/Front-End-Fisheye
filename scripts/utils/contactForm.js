@@ -24,7 +24,7 @@ closeModalButton.addEventListener("click", closeModal);
 //-------Function validation
 const form = document.querySelector("form");
 function validate(e) {
-    e.preventDefault(); //not to send data before validation
+    // e.preventDefault(); //not to send data before validation
 
     const firstElem = document.getElementById("firstName");
     const lastElem = document.getElementById("lastName");
@@ -59,6 +59,7 @@ function validate(e) {
             "Veuillez entrer au moins 2 caractères sans chiffres."
         );
         firstElem.classList.add("inputError");
+        e.preventDefault(); //not to send data before validation
     } else {
         firstElem.classList.remove("inputError");
     }
@@ -70,6 +71,7 @@ function validate(e) {
             "Veuillez entrer au moins 2 caractères sans chiffres."
         );
         lastElem.classList.add("inputError");
+        e.preventDefault(); //not to send data before validation
     } else {
         lastElem.classList.remove("inputError");
     }
@@ -79,6 +81,7 @@ function validate(e) {
     if (emailElem.value === "" || !pattern.test(emailElem.value)) {
         createError(emailElem, "Veuillez entrer une adresse mail valide.");
         emailElem.classList.add("inputError");
+        e.preventDefault(); //not to send data before validation
     } else {
         emailElem.classList.remove("inputError");
     }
@@ -90,9 +93,16 @@ function validate(e) {
             "Veuillez entrer un message d'au moins 5 caractères."
         );
         textareaElem.classList.add("inputError");
+        e.preventDefault(); //not to send data before validation
     } else {
         textareaElem.classList.remove("inputError");
     }
+    console.log({
+        firstName: firstValue,
+        lastName: lastValue,
+        email: emailElem.value,
+        textarea: textareaValue,
+    });
 }
 
 form.addEventListener("submit", validate);
