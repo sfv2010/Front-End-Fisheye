@@ -4,13 +4,6 @@ export function mediaFactory(data) {
     const { id, photographerId, title, image, video, likes, date, price } =
         data;
 
-    let mediaUrl;
-    if (video) {
-        mediaUrl = `assets/images/${photographerId}/${video} `;
-    } else {
-        mediaUrl = `assets/images/${photographerId}/${image}`;
-    }
-
     //Function that returns the photographer DOM element
     function getMediaCardDOM() {
         // Create div
@@ -43,6 +36,13 @@ export function mediaFactory(data) {
         iconLike.classList.add("fa-heart");
         iconLike.ariaLabel = "heart icon";
 
+        //Image et video
+        let mediaUrl;
+        if (video) {
+            mediaUrl = `assets/images/${photographerId}/${video} `;
+        } else {
+            mediaUrl = `assets/images/${photographerId}/${image}`;
+        }
         if (video) {
             // Create video
             const videoMedia = document.createElement("video");
@@ -50,14 +50,16 @@ export function mediaFactory(data) {
             videoMedia.alt = title;
             videoMedia.controls = "cotrols";
             videoMedia.textContent = "Sorry, can't play video";
-            videoMedia.classList.add("viewInLightbox");
+            videoMedia.classList.add("viewIn");
+            videoMedia.id = id;
             divMedia.appendChild(videoMedia);
         } else {
             // Create image
             const imgMedia = document.createElement("img");
             imgMedia.src = mediaUrl;
             imgMedia.alt = title;
-            imgMedia.classList.add("viewInLightbox");
+            imgMedia.classList.add("viewIn");
+            imgMedia.id = id;
             divMedia.appendChild(imgMedia);
         }
 
@@ -70,10 +72,11 @@ export function mediaFactory(data) {
 
         //small footer
         document.querySelector(".totalLikes").textContent = likes;
+        //lightbox
 
         return divMedia;
     }
-    return { getMediaCardDOM, likes, id, date, price };
+    return { getMediaCardDOM };
 }
 
 // //Event for select
