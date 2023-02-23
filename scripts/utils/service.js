@@ -2,9 +2,7 @@
 export async function getPhotographers() {
     try {
         const resPhotographers = await fetch("data/photographers.json");
-        //console.log(resPhotographers);
         const jsonPhotographers = await resPhotographers.json();
-        console.log(jsonPhotographers);
         return jsonPhotographers;
     } catch (error) {
         console.log(error);
