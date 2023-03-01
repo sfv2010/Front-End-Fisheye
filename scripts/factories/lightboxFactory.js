@@ -5,6 +5,7 @@ export async function lightboxMedia(mediaId) {
     let currentId = mediaId;
     const { title, photographerId, image, video, id } = selectedMedia;
     const figure = document.querySelector(".figure");
+    const lightbox = document.querySelector(".lightbox");
     let mediaUrl;
     if (video) {
         mediaUrl = `assets/images/${photographerId}/${video} `;
@@ -19,23 +20,25 @@ export async function lightboxMedia(mediaId) {
         videoMedia.textContent = "Sorry, can't play video";
         videoMedia.classList.add("viewInLightbox");
         videoMedia.id = id;
+        videoMedia.tabIndex = "0";
         figure.appendChild(videoMedia);
     } else if (image) {
         const imageMedia = document.createElement("img");
         imageMedia.src = mediaUrl;
         imageMedia.alt = title;
-        imageMedia.title = title;
-        imageMedia.dataCaption = "title";
         imageMedia.classList.add("viewInLightbox");
         imageMedia.id = id;
+        imageMedia.tabIndex = "0";
         figure.appendChild(imageMedia);
     }
     // Create figcaption
     const figcaption = document.createElement("figcaption");
     figcaption.classList.add("figcaption");
     figcaption.innerText = title;
-    figcaption.tabindex = "0";
+    figcaption.tabIndex = "0";
     figure.appendChild(figcaption);
+
+    lightbox.focus();
 }
 
 // export function lightboxFactory(data) {
@@ -48,7 +51,7 @@ export async function lightboxMedia(mediaId) {
 //         //create div
 //         const lightbox = document.createElement("div");
 //         lightbox.classList.add("lightbox");
-//         lightbox.tabindex = "0";
+//         lightbox.tabIndex = "0";
 
 //         //create button
 //         const buttonClose = document.createElement("button");
@@ -63,7 +66,7 @@ export async function lightboxMedia(mediaId) {
 //         divBack.classList.add("fa-sharp");
 //         divBack.classList.add("fa-solid");
 //         divBack.classList.add("fa-chevron-left");
-//         divBack.tabindex = "0";
+//         divBack.tabIndex = "0";
 
 //         // Create div
 //         const divNext = document.createElement("div");
@@ -71,7 +74,7 @@ export async function lightboxMedia(mediaId) {
 //         divNext.classList.add("fa-sharp");
 //         divNext.classList.add("fa-solid");
 //         divNext.classList.add("fa-chevron-right");
-//         divNext.tabindex = "0";
+//         divNext.tabIndex = "0";
 
 //         // Create figure
 //         const figure = document.createElement("figure");
@@ -81,7 +84,7 @@ export async function lightboxMedia(mediaId) {
 //         const figcaption = document.createElement("figcaption");
 //         figcaption.classList.add("figcaption");
 //         figcaption.innerText = title;
-//         figcaption.tabindex = "0";
+//         figcaption.tabIndex = "0";
 
 //         // let mediaUrl;
 //         // if (video) {
