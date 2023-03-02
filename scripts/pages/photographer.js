@@ -4,14 +4,12 @@ import { mediaFactory } from "../factories/mediaFactory.js";
 import {} from "../utils/contactForm.js";
 import { viewLightbox } from "../utils/lighthbox.js";
 import { timesLiked } from "../utils/likes.js";
-// import { orderBy } from "../utils/sort.js";
 
 // ---------------------------photographer--------------------------
 //Function to create selected photographer
 function displayData(photographer) {
     const mediaSection = document.querySelector(".photograph-header");
     //Loop through the Photographer array and create a profile
-    console.log(photographer);
     photographer.forEach((info) => {
         const photographerInfo = photographerIntroduction(info);
         //Create photographer information in the Dom element
@@ -29,7 +27,6 @@ async function init() {
     const selectedPhoto = await photographers.filter(
         (photographer) => photographer.id == idPhotographer
     );
-
     displayData(selectedPhoto);
 }
 init();
@@ -46,20 +43,10 @@ async function displayMedia(medias) {
         const userCardDOM = mediaInfo.getMediaCardDOM();
         mediaSection.appendChild(userCardDOM);
     });
-    //lightbox modal
-    // const lightboxSection = document.getElementById("lightboxModal");
-    // const lightboxInfo = lightboxFactory(medias);
-    // const lightboxCardDOM = lightboxInfo.getLightboxCardDOM();
-    // lightboxSection.appendChild(lightboxCardDOM);
-    // const lightboxSection = document.querySelector("figure");
-    // const lightboxInfo = lightboxFactory(medias);
-    // const lightboxCardDOM = lightboxInfo.getLightboxCardDOM();
-    // lightboxSection.appendChild(lightboxCardDOM);
-
     //Execute the timesliked function
     timesLiked();
     //Execute the viewLightbox function
-    viewLightbox();
+    viewLightbox(medias);
 }
 //Function to get,selection and display photo data
 export async function initMedia() {
