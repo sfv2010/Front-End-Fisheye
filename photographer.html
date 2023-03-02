@@ -59,15 +59,15 @@
           </div>
           <div class="formData">
             <label for="message">Votre message</label>
-            <textarea class="text-control message" id="message" name="message" maxlength="300" minlength="5" required
-              aria-required="true">
-            </textarea>
+            <input type="text" class="text-control" id="message" name="message" maxlength="300" minlength="5"
+              aria-required="true" required>
+
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" type="submit" aria-label="Send">Envoyer</button>
         </form>
       </div>
     </div>
-    <nav id="lightboxModal" role="dialog" aria-hidden="true" aria-label="image closeup view">
+    <dialog id="lightboxModal" aria-hidden="true" aria-label="image closeup view">
       <div class="lightbox" tabindex="0">
         <button class="closeLightbox fa-solid fa-xmark" tabindex="0" aria-label="Close dialog"></button>
 
@@ -77,13 +77,13 @@
         </figure>
         <button class="chevronNext fa-sharp fa-solid fa-chevron-right" aria-label="Next image" tabindex="0"></button>
       </div>
-    </nav>
-    <footer class="likePrice" tabindex="0" aria-label="total number of likes and daily price">
+    </dialog>
+    <footer class="likePrice" tabindex="0" aria-label="total number of likes and daily price" aria-hidden="false">
       <div class="likeHeart">
-        <h3 class="totalLikes" aria-label="number of likes"></h3>
-        <i class="fa-solid fa-heart" aria-label="heart icon"></i>
+        <span class="totalLikes"></span>
+        <i class="fa-solid fa-heart"></i>
       </div>
-      <span class="dailyPrice" aria-label="daily price"></span>
+      <span class="dailyPrice"></span>
     </footer>
     <script type="module" src="scripts/pages/photographer.js"></script>
   </body>
