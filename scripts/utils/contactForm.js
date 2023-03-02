@@ -24,7 +24,7 @@ closeModalButton.addEventListener("click", closeModal);
 //-------Function validation
 const form = document.querySelector("form");
 function validate(e) {
-    // e.preventDefault(); //not to send data before validation
+    e.preventDefault(); //not to send data before validation
 
     const firstElem = document.getElementById("firstName");
     const lastElem = document.getElementById("lastName");
@@ -59,7 +59,7 @@ function validate(e) {
             "Veuillez entrer au moins 2 caractères sans chiffres."
         );
         firstElem.classList.add("inputError");
-        e.preventDefault(); //not to send data before validation
+        // e.preventDefault(); //not to send data before validation
     } else {
         firstElem.classList.remove("inputError");
     }
@@ -97,12 +97,17 @@ function validate(e) {
     } else {
         textareaElem.classList.remove("inputError");
     }
-    console.log({
-        firstName: firstValue,
-        lastName: lastValue,
-        email: emailElem.value,
-        textarea: textareaValue,
-    });
+
+    if (form.checkValidity()) {
+        console.log({
+            firstName: firstValue,
+            lastName: lastValue,
+            email: emailElem.value,
+            textarea: textareaValue,
+        });
+        form.reset();
+        closeModal();
+    }
 }
 
 form.addEventListener("submit", validate);
