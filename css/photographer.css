@@ -274,6 +274,7 @@ i {
 #lightboxModal {
     background-color: #fff;
     width: 100%;
+    border: none;
 }
 .lightbox {
     position: fixed;
@@ -348,9 +349,13 @@ i {
     display: flex;
     align-items: center;
 }
-.dailyPrice {
+.dailyPrice,
+.totalLikes {
     font-size: 25px;
     font-weight: bold;
+}
+#message {
+    height: 180px;
 }
 
 @media screen and (max-width: 1150px) {
