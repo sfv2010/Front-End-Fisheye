@@ -30,7 +30,7 @@ export function mediaFactory(data) {
         spanMedia.ariaLabel = "number of likes";
 
         //Create icon
-        const iconLike = document.createElement("i");
+        const iconLike = document.createElement("span");
         iconLike.classList.add("fa-solid");
         iconLike.classList.add("fa-heart");
         // iconLike.ariaLabel = "heart icon";

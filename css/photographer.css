@@ -327,10 +327,11 @@ i {
     font-size: 1.2em;
 }
 
-.likeHeart i {
-    margin-left: 5px;
+.likeHeart {
     color: #000;
     font-size: 25px;
+    display: flex;
+    align-items: center;
 }
 
 .likePrice {
@@ -345,14 +346,14 @@ i {
     bottom: 0;
     right: 3%;
 }
-.likeHeart {
-    display: flex;
-    align-items: center;
-}
+
 .dailyPrice,
 .totalLikes {
     font-size: 25px;
     font-weight: bold;
+}
+.hertIcon {
+    margin-left: 6px;
 }
 #message {
     height: 180px;
