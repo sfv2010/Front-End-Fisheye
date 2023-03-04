@@ -17,7 +17,7 @@ export function photographerIntroduction(photographer) {
         // Create div
         const divPhotographer = document.createElement("div");
         divPhotographer.classList.add("introduction");
-        divPhotographer.tabIndex = "2";
+        divPhotographer.tabIndex = "0";
         // Create h2
         const h2Photographer = document.createElement("h2");
         h2Photographer.textContent = name;
