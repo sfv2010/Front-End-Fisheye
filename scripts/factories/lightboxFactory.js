@@ -17,7 +17,6 @@ export async function lightboxMedia(mediaId, medias) {
         videoMedia.textContent = "Sorry, can't play video";
         videoMedia.classList.add("viewInLightbox");
         videoMedia.id = id;
-        // videoMedia.tabIndex = "0";
         figure.appendChild(videoMedia);
     } else if (image) {
         const imageMedia = document.createElement("img");
@@ -25,14 +24,12 @@ export async function lightboxMedia(mediaId, medias) {
         imageMedia.alt = title;
         imageMedia.classList.add("viewInLightbox");
         imageMedia.id = id;
-        // imageMedia.tabIndex = "0";
         figure.appendChild(imageMedia);
     }
     // Create figcaption
     const figcaption = document.createElement("figcaption");
     figcaption.classList.add("figcaption");
     figcaption.innerText = title;
-    // figcaption.tabIndex = "0";
     figure.appendChild(figcaption);
 
     lightbox.focus();
