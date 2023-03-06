@@ -23,13 +23,13 @@ closeModalButton.addEventListener("click", closeModal);
 
 //-------Function validation
 const form = document.querySelector("form");
+const firstElem = document.getElementById("firstName");
+const lastElem = document.getElementById("lastName");
+const emailElem = document.getElementById("email");
+const textareaElem = document.getElementById("message");
 function validate(e) {
-    e.preventDefault(); //not to send data before validation
-
-    const firstElem = document.getElementById("firstName");
-    const lastElem = document.getElementById("lastName");
-    const emailElem = document.getElementById("email");
-    const textareaElem = document.getElementById("message");
+    e.preventDefault(); //for console
+    let formValidate = true;
 
     //function to display error messages
     const createError = (elem, errorMessage) => {
@@ -59,7 +59,8 @@ function validate(e) {
             "Veuillez entrer au moins 2 caractères sans chiffres."
         );
         firstElem.classList.add("inputError");
-        // e.preventDefault(); //not to send data before validation
+        e.preventDefault(); //not to send data before validation
+        formValidate = false;
     } else {
         firstElem.classList.remove("inputError");
     }
@@ -72,6 +73,7 @@ function validate(e) {
         );
         lastElem.classList.add("inputError");
         e.preventDefault(); //not to send data before validation
+        formValidate = false;
     } else {
         lastElem.classList.remove("inputError");
     }
@@ -82,6 +84,7 @@ function validate(e) {
         createError(emailElem, "Veuillez entrer une adresse mail valide.");
         emailElem.classList.add("inputError");
         e.preventDefault(); //not to send data before validation
+        formValidate = false;
     } else {
         emailElem.classList.remove("inputError");
     }
@@ -94,20 +97,23 @@ function validate(e) {
         );
         textareaElem.classList.add("inputError");
         e.preventDefault(); //not to send data before validation
+        formValidate = false;
     } else {
         textareaElem.classList.remove("inputError");
     }
 
-    if (form.checkValidity()) {
+    return formValidate;
+}
+
+form.addEventListener("submit", (e) => {
+    if (validate(e)) {
         console.log({
-            firstName: firstValue,
-            lastName: lastValue,
-            email: emailElem.value,
-            textarea: textareaValue,
+            FirstName: firstElem.value,
+            LastName: lastElem.value,
+            Email: emailElem.value,
+            Message: textareaElem.value,
         });
         form.reset();
         closeModal();
     }
-}
-
-form.addEventListener("submit", validate);
+});
