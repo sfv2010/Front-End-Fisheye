@@ -9,7 +9,6 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/ee83a0c4c7.css" crossorigin="anonymous"> -->
     <script src="https://kit.fontawesome.com/ee83a0c4c7.js" crossorigin="anonymous"></script>
   </head>
 
@@ -45,22 +44,19 @@
         <form name="contact" action="index.html" method="get" novalidate>
           <div class="formData">
             <label for="firstName">Prénom</label>
-            <input class="text-control" type="text" id="firstName" name="firstName" minlength="2" required
-              aria-required="true" autofocus>
+            <input type="text" id="firstName" name="firstName" minlength="2" required aria-required="true" autofocus>
           </div>
           <div class="formData">
             <label for="lastName">Nom</label>
-            <input class="text-control" type="text" id="lastName" name="lastName" minlength="2" required
-              aria-required="true">
+            <input type="text" id="lastName" name="lastName" minlength="2" required aria-required="true">
           </div>
           <div class="formData">
             <label for="email">Email</label>
-            <input class="text-control" type="email" id="email" name="email" required aria-required="true">
+            <input type="email" id="email" name="email" required aria-required="true">
           </div>
           <div class="formData">
             <label for="message">Votre message</label>
-            <input type="text" class="text-control" id="message" name="message" maxlength="300" minlength="5"
-              aria-required="true" required>
+            <input type="text" id="message" name="message" maxlength="300" minlength="5" aria-required="true" required>
 
           </div>
           <button class="contact_button" type="submit" aria-label="Send">Envoyer</button>
