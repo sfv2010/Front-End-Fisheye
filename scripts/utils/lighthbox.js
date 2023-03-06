@@ -10,7 +10,7 @@ export function viewLightbox(medias) {
     const mediaBack = document.querySelector(".chevronBack");
     const arrayAllImages = Array.from(allImages);
     let currentId;
-
+    //Function to open the modal
     function displayLightboxModal(e) {
         lightboxModal.style.display = "block";
         main.ariaHidden = "true";
@@ -20,7 +20,7 @@ export function viewLightbox(medias) {
         currentId = media.id;
         lightboxMedia(currentId, medias);
     }
-
+    //Function for displaying next photo in modal
     function showNext() {
         const zoomLightbox = document.querySelector(".viewInLightbox");
         const figcaption = document.querySelector("figcaption");
@@ -35,11 +35,11 @@ export function viewLightbox(medias) {
             ].id;
 
         currentId = nextId;
-        console.log(currentIndex);
         lightboxMedia(nextId, medias);
         zoomLightbox.remove();
         figcaption.remove();
     }
+    //Function for displaying previous photo in modal
     function showBack() {
         const zoomLightbox = document.querySelector(".viewInLightbox");
         const figcaption = document.querySelector("figcaption");
@@ -58,7 +58,7 @@ export function viewLightbox(medias) {
         zoomLightbox.remove();
         figcaption.remove();
     }
-
+    //Function to close the modal
     function closeLightboxModal() {
         const zoomLightbox = document.querySelector(".viewInLightbox");
         const figcaption = document.querySelector("figcaption");
