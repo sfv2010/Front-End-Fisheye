@@ -70,7 +70,6 @@ export async function initMedia() {
         } else if (select.value === "popularity") {
             copySelectedPhoto.sort((a, b) => b.likes - a.likes);
         } else if (select.value === "Titre") {
-            console.log(select.value);
             copySelectedPhoto.sort((a, b) =>
                 a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1
             );
