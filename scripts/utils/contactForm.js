@@ -29,19 +29,14 @@ const emailElem = document.getElementById("email");
 const textareaElem = document.getElementById("message");
 function validate(e) {
     e.preventDefault(); //for console
-    let formValidate = true;
+    let isFormValidate = true;
 
     //function to display error messages
     const createError = (elem, errorMessage) => {
-        //create span element
         const errorSpan = document.createElement("span");
-        //add class
         errorSpan.classList.add("error");
-        //add error message
         errorSpan.textContent = errorMessage;
-        //add aria-live
         errorSpan.ariaLive = "polite";
-        //append to parent element
         elem.parentNode.appendChild(errorSpan);
     };
 
@@ -60,7 +55,7 @@ function validate(e) {
         );
         firstElem.classList.add("inputError");
         e.preventDefault(); //not to send data before validation
-        formValidate = false;
+        isFormValidate = false;
     } else {
         firstElem.classList.remove("inputError");
     }
@@ -72,8 +67,8 @@ function validate(e) {
             "Veuillez entrer au moins 2 caractères sans chiffres."
         );
         lastElem.classList.add("inputError");
-        e.preventDefault(); //not to send data before validation
-        formValidate = false;
+        e.preventDefault();
+        isFormValidate = false;
     } else {
         lastElem.classList.remove("inputError");
     }
@@ -83,8 +78,8 @@ function validate(e) {
     if (emailElem.value === "" || !pattern.test(emailElem.value)) {
         createError(emailElem, "Veuillez entrer une adresse mail valide.");
         emailElem.classList.add("inputError");
-        e.preventDefault(); //not to send data before validation
-        formValidate = false;
+        e.preventDefault();
+        isFormValidate = false;
     } else {
         emailElem.classList.remove("inputError");
     }
@@ -96,13 +91,13 @@ function validate(e) {
             "Veuillez entrer un message d'au moins 5 caractères."
         );
         textareaElem.classList.add("inputError");
-        e.preventDefault(); //not to send data before validation
-        formValidate = false;
+        e.preventDefault();
+        isFormValidate = false;
     } else {
         textareaElem.classList.remove("inputError");
     }
 
-    return formValidate;
+    return isFormValidate;
 }
 
 form.addEventListener("submit", (e) => {
