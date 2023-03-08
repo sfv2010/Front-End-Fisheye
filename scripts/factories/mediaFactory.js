@@ -58,7 +58,6 @@ export function mediaFactory(data) {
             const imgMedia = document.createElement("img");
             imgMedia.src = mediaUrl;
             imgMedia.alt = title;
-            imgMedia.title = title;
             imgMedia.classList.add("viewIn");
             imgMedia.id = id;
             imgMedia.tabIndex = "0";
