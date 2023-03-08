@@ -1,6 +1,6 @@
+const modal = document.getElementById("contact_modal");
+const main = document.getElementById("main");
 function displayModal() {
-    const modal = document.getElementById("contact_modal");
-    const main = document.getElementById("main");
     const focusInput = document.getElementById("firstName");
     modal.style.display = "block";
     main.ariaHidden = "true";
@@ -8,10 +8,7 @@ function displayModal() {
     focusInput.focus();
 }
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    const main = document.getElementById("main");
     modal.style.display = "none";
-
     main.ariaHidden = "false";
     modal.ariaHidden = "true";
 }
@@ -20,6 +17,11 @@ contact.addEventListener("click", displayModal);
 
 const closeModalButton = document.querySelector(".closeModal");
 closeModalButton.addEventListener("click", closeModal);
+modal.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        closeModal();
+    }
+});
 
 //-------Function validation
 const form = document.querySelector("form");

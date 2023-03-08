@@ -83,4 +83,14 @@ export function viewLightbox(medias) {
     mediaNext.addEventListener("click", showNext);
     mediaBack.addEventListener("click", showBack);
     closeLightboxModalButton.addEventListener("click", closeLightboxModal);
+    //ArrowRight/Left,Escape keys
+    lightboxModal.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+            showNext();
+        } else if (e.key === "ArrowLeft") {
+            showBack();
+        } else if (e.key === "Escape") {
+            closeLightboxModal();
+        }
+    });
 }
