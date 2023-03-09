@@ -99,7 +99,7 @@ article span {
         grid-template-columns: 1fr;
         margin-top: 30px;
     }
-    header {
+    .photographer_section header {
         flex-direction: column;
     }
     .logo {

@@ -387,6 +387,10 @@ video:hover {
         border-radius: 5px;
         right: 2%;
     }
+    .modal header h2 {
+        font-size: 40px;
+        font-weight: bold;
+    }
 }
 
 @keyframes lightbox {
