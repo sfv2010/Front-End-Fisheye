@@ -33,7 +33,6 @@ export function mediaFactory(data) {
         const iconLike = document.createElement("span");
         iconLike.classList.add("fa-solid");
         iconLike.classList.add("fa-heart");
-        // iconLike.ariaLabel = "heart icon";
 
         //Image et video
         let mediaUrl;
