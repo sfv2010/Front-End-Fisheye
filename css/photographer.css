@@ -247,7 +247,7 @@ video:hover {
 }
 .viewInLightbox {
     width: 100%;
-    max-height: 800px;
+    max-height: 750px;
     border-radius: 5px;
     object-fit: contain;
     animation: lightbox 0.5s;
