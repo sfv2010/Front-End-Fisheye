@@ -15,6 +15,7 @@ export function viewLightbox(medias) {
         lightboxModal.style.display = "block";
         main.ariaHidden = "true";
         likePrice.ariaHidden = "true";
+        likePrice.tabIndex = "-1";
         lightboxModal.ariaHidden = "false";
         const media = e.target;
         currentId = media.id;
@@ -66,6 +67,7 @@ export function viewLightbox(medias) {
         lightboxModal.style.display = "none";
         main.ariaHidden = "false";
         likePrice.ariaHidden = "false";
+        likePrice.tabIndex = "0";
         lightboxModal.ariaHidden = "true";
         zoomLightbox.remove();
         figcaption.remove();
