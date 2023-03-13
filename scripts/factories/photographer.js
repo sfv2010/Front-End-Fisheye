@@ -1,9 +1,6 @@
 //Factory Function that creates a photographer card
 export function photographerFactory(photographer) {
-    //Object destructuring assignment. Extract multiple properties from object
     const { city, country, id, name, portrait, price, tagline } = photographer;
-    //const city = photographer.city..
-
     const picture = `assets/photographers/${portrait}`;
     //Function that returns the photographer DOM element
     function getUserCardDOM() {
@@ -27,7 +24,6 @@ export function photographerFactory(photographer) {
         const divPhotographer = document.createElement("div");
         divPhotographer.classList.add("introduction");
         divPhotographer.tabIndex = "0";
-
         // Create h3
         const h3Photographer = document.createElement("h3");
         h3Photographer.textContent = city + ", " + country;
