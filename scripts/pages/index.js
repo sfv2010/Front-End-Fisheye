@@ -1,7 +1,6 @@
 import { getPhotographers } from "../utils/service.js";
 import { photographerFactory } from "../factories/photographer.js";
 //Function to create each photographer
-//async?
 async function displayData(photographers) {
     const photographersSection = document.querySelector(
         ".photographer_section"
