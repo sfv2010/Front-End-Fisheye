@@ -92,7 +92,7 @@ export function viewLightbox(medias) {
         } else if (e.key === "ArrowLeft") {
             showBack();
         } else if (e.key === "Escape") {
-            closeLightboxModal();
+            closeLightboxModal(e);
         }
     });
 }
