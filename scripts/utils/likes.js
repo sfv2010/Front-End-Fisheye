@@ -10,8 +10,6 @@ export function timesLiked() {
         totalLikes.textContent = totalNumberLikes;
     });
     likeIt.forEach((liked) => {
-        window.addEventListener("load", () => {});
-
         liked.addEventListener("click", () => {
             const timesOfLike = liked.firstElementChild;
             if (timesOfLike.classList.contains("clicked")) {
