@@ -49,13 +49,13 @@ export function viewLightbox(medias) {
             (current) => current.id === currentId
         );
 
-        const nextId =
+        const backId =
             arrayAllImages[
                 currentIndex > 0 ? currentIndex - 1 : arrayAllImages.length - 1
             ].id;
 
-        currentId = nextId;
-        lightboxMedia(nextId, medias);
+        currentId = backId;
+        lightboxMedia(backId, medias);
         zoomLightbox.remove();
         figcaption.remove();
     }
