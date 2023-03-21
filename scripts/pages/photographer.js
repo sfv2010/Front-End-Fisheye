@@ -33,7 +33,7 @@ init();
 
 // ---------------------------media--------------------------
 //Function to create photos of selected photographer
-async function displayMedia(medias) {
+function displayMedia(medias) {
     const mediaSection = document.querySelector(".containerMediaWork");
     mediaSection.innerHTML = "";
     //Loop through the media array and create photo
@@ -43,17 +43,13 @@ async function displayMedia(medias) {
         const userCardDOM = mediaInfo.getMediaCardDOM();
         mediaSection.appendChild(userCardDOM);
     });
-    //Execute the timesliked function
     timesLiked();
-    //Execute the viewLightbox function
     viewLightbox(medias);
 }
 //Function to get,selection and display photo data
-export async function initMedia() {
-    //media or photographers
+async function initMedia() {
     const { media } = await getPhotographers();
-    const idPhotographer = location.href.split("?")[1]; //split("?")[1] = id, split("?")[0]= http...
-    //typeof idPhotographer = Sting
+    const idPhotographer = location.href.split("?")[1];
     const selectedPhoto = await media.filter(
         (media) => media.photographerId == idPhotographer
     );
