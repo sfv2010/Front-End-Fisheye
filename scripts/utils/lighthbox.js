@@ -63,14 +63,15 @@ export function viewLightbox(medias) {
     function closeLightboxModal() {
         const zoomLightbox = document.querySelector(".viewInLightbox");
         const figcaption = document.querySelector("figcaption");
-
-        lightboxModal.style.display = "none";
-        main.ariaHidden = "false";
-        likePrice.ariaHidden = "false";
-        likePrice.tabIndex = "0";
-        lightboxModal.ariaHidden = "true";
-        zoomLightbox.remove();
-        figcaption.remove();
+        if (zoomLightbox) {
+            lightboxModal.style.display = "none";
+            main.ariaHidden = "false";
+            likePrice.ariaHidden = "false";
+            likePrice.tabIndex = "0";
+            lightboxModal.ariaHidden = "true";
+            zoomLightbox.remove();
+            figcaption.remove();
+        }
     }
 
     allImages.forEach((elem) => {
@@ -92,7 +93,7 @@ export function viewLightbox(medias) {
         } else if (e.key === "ArrowLeft") {
             showBack();
         } else if (e.key === "Escape") {
-            closeLightboxModal(e);
+            closeLightboxModal();
         }
     });
 }
