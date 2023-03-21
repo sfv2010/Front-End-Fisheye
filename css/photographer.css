@@ -175,7 +175,6 @@ form textarea {
     background-size: 15px;
     background-position: calc(100% - 20px) 50%;
     background-repeat: no-repeat;
-    outline: none;
 }
 #dropDownMenu:hover {
     box-shadow: 0px 0px 10px #901c1c;
